@@ -1,18 +1,25 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <h1>{{ name }}</h1>
+    <RyanKim />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import RyanKim from '@/components/RyanKim.vue'; // @: src
 
 export default {
-  name: 'HomeView',
   components: {
-    HelloWorld
-  }
-}
+    RyanKim,
+  },
+  data() {
+    return {
+      name: 'hyeonho',
+    };
+  },
+};
 </script>
+
+<style scoped>
+/* scoped 속성을 넣어줘야 해당 파일에서만 css 적용됨 */
+</style>
