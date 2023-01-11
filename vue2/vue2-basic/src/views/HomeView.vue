@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>{{ name }}</h1>
-    <RyanKim />
+    <RyanKim title="Home" />
   </div>
 </template>
 
@@ -9,6 +9,7 @@
 import RyanKim from '@/components/RyanKim.vue'; // @: src
 
 export default {
+  props: ['title'],
   components: {
     RyanKim,
   },
