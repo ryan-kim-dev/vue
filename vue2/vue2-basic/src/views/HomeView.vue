@@ -1,20 +1,25 @@
 <template>
   <div>
-    <h1>{{ name }}</h1>
-    <RyanKim title="Home" />
+    <h1>홈페이지</h1>
+    <form action="">
+      <InputField v-model="name" />
+      <br />
+      <button type="submit">Submit</button>
+    </form>
+    {{ name }}
   </div>
 </template>
 
 <script>
-import RyanKim from '@/components/RyanKim.vue'; // @: src
+import InputField from '../components/InputField.vue';
 
 export default {
   components: {
-    RyanKim,
+    InputField,
   },
   data() {
     return {
-      name: 'hyeonho',
+      name: '',
     };
   },
 };
