@@ -1,16 +1,13 @@
 <template>
-  <div>
-    <SignupForm></SignupForm>
-  </div>
+  <header>
+    <router-link to="/login">로그인</router-link> |
+    <router-link to="/signup">회원가입</router-link>
+  </header>
 </template>
 
 <script>
-import SignupForm from '@/components/SignupForm.vue';
 export default {
-  name: 'SignupPage',
-  components: {
-    SignupForm,
-  },
+  name: 'AppHeader',
 
   data() {
     return {};
