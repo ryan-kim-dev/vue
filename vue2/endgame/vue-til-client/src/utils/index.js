@@ -1,3 +1,4 @@
 import { axiosInstance } from './instance';
+import { validateEmail, validatePassword } from './validation';
 
-export { axiosInstance };
+export { axiosInstance, validateEmail, validatePassword };
