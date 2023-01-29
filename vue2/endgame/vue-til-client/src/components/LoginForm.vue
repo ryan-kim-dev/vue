@@ -59,10 +59,11 @@ export default {
     async handleLogin() {
       try {
         const { data } = await loginUser(this.userInfo);
-        this.logMessage = `${data.message}!! ${data.user.username} 님 환영합니다.`;
+        if (data.user.username) this.initForm();
+        // 뷰 라우터의 Programmic Navigation - 참고: https://router.vuejs.org/guide/essentials/navigation.html
+        return this.$router.push('/main');
       } catch (error) {
         this.logMessage = error.response.data;
-      } finally {
         this.initForm();
       }
     },
