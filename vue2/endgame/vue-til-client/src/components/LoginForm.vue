@@ -59,7 +59,8 @@ export default {
     async handleLogin() {
       try {
         const { data } = await loginUser(this.userInfo);
-        if (data.user.username) this.initForm();
+        // vuex mutation을 호출하여 로그인 요청의 응답 데이터 값으로 로그인한 유저의 정보를 state에 업데이트
+        this.$store.commit('setUserInfo', data.user);
         // 뷰 라우터의 Programmic Navigation - 참고: https://router.vuejs.org/guide/essentials/navigation.html
         return this.$router.push('/main');
       } catch (error) {
