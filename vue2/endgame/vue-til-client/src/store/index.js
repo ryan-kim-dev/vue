@@ -21,5 +21,11 @@ export default new Vuex.Store({
     setUserInfo(state, loginUser) {
       return (state.userInfo = loginUser);
     },
+    clearUserInfo(state) {
+      return (state.userInfo = {
+        username: '',
+        nickname: '',
+      });
+    },
   },
 });

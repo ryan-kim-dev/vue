@@ -34,10 +34,8 @@ export default {
 
   methods: {
     handleLogout() {
-      this.$store.commit('setUserInfo', {
-        username: '',
-        nickname: '',
-      });
+      this.$store.commit('clearUserInfo');
+      return this.$router.push('/login');
     },
   },
 };
