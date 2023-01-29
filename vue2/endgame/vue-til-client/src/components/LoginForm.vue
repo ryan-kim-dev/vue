@@ -37,12 +37,14 @@ export default {
 
   methods: {
     async handleLogin() {
-      const { data } = await loginUser(this.userInfo);
-      if (data.success)
+      try {
+        const { data } = await loginUser(this.userInfo);
         this.logMessage = `${data.message}!! ${data.user.username} 님 환영합니다.`;
-
-      this.initForm();
-      return;
+      } catch (error) {
+        this.logMessage = error.response.data;
+      } finally {
+        this.initForm();
+      }
     },
     initForm() {
       this.userInfo = {
